@@ -29,7 +29,7 @@ namespace Microservice.User.Service
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.Configure<IDbContext>(options =>
+            services.Configure<UserDbContext>(options =>
             {
                 options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
                 options.DatabaseName = Configuration.GetSection("MongoConnection:DatabaseName").Value;

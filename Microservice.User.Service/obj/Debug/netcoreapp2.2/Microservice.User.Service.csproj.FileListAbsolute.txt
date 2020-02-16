@@ -1,0 +1,14 @@
+C:\localprjgithub\Microservice.User\Microservice.User.Service\bin\Debug\netcoreapp2.2\Microservice.User.Service.deps.json
+C:\localprjgithub\Microservice.User\Microservice.User.Service\bin\Debug\netcoreapp2.2\Microservice.User.Service.runtimeconfig.json
+C:\localprjgithub\Microservice.User\Microservice.User.Service\bin\Debug\netcoreapp2.2\Microservice.User.Service.runtimeconfig.dev.json
+C:\localprjgithub\Microservice.User\Microservice.User.Service\bin\Debug\netcoreapp2.2\Microservice.User.Service.dll
+C:\localprjgithub\Microservice.User\Microservice.User.Service\bin\Debug\netcoreapp2.2\Microservice.User.Service.pdb
+C:\localprjgithub\Microservice.User\Microservice.User.Service\obj\Debug\netcoreapp2.2\Microservice.User.Service.csproj.CoreCompileInputs.cache
+C:\localprjgithub\Microservice.User\Microservice.User.Service\obj\Debug\netcoreapp2.2\Microservice.User.Service.RazorAssemblyInfo.cache
+C:\localprjgithub\Microservice.User\Microservice.User.Service\obj\Debug\netcoreapp2.2\Microservice.User.Service.RazorAssemblyInfo.cs
+C:\localprjgithub\Microservice.User\Microservice.User.Service\obj\Debug\netcoreapp2.2\Microservice.User.Service.AssemblyInfoInputs.cache
+C:\localprjgithub\Microservice.User\Microservice.User.Service\obj\Debug\netcoreapp2.2\Microservice.User.Service.AssemblyInfo.cs
+C:\localprjgithub\Microservice.User\Microservice.User.Service\obj\Debug\netcoreapp2.2\Microservice.User.Service.RazorTargetAssemblyInfo.cache
+C:\localprjgithub\Microservice.User\Microservice.User.Service\obj\Debug\netcoreapp2.2\Microservice.User.Service.dll
+C:\localprjgithub\Microservice.User\Microservice.User.Service\obj\Debug\netcoreapp2.2\Microservice.User.Service.pdb
+C:\localprjgithub\Microservice.User\Microservice.User.Service\obj\Debug\netcoreapp2.2\Microservice.User.Service.csprojAssemblyReference.cache
