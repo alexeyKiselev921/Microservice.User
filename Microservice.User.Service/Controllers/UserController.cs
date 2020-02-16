@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microservice.User.Service.Models;
+using Microservice.User.Service.Resolvers;
 using Microservice.User.Service.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,10 +16,12 @@ namespace Microservice.User.Service.Controllers
     public class UserController : ControllerBase
     {
         private readonly IUserService _userService;
+        private readonly JsonSerializerSettings _jsonSerializerSettings;
 
         public UserController(IUserService userService)
         {
             _userService = userService;
+            _jsonSerializerSettings = new JsonSerializerSettings() { ContractResolver = new LowercaseContractResolver() };
         }
 
         [HttpGet]
@@ -27,7 +30,7 @@ namespace Microservice.User.Service.Controllers
             return _userService.GetAll();
         }
 
-        [HttpGet("{id}", Name = "Get")]
+        [HttpGet("{id}", Name = "GetUser")]
         public async Task<string> Get(string id)
         {
             try
@@ -38,7 +41,7 @@ namespace Microservice.User.Service.Controllers
                     return JsonConvert.SerializeObject("No user found");
                 }
 
-                return JsonConvert.SerializeObject(user);
+                return JsonConvert.SerializeObject(user, Formatting.Indented, _jsonSerializerSettings);
             }
             catch (Exception e)
             {
@@ -68,9 +71,8 @@ namespace Microservice.User.Service.Controllers
             }
         }
 
-        [HttpPut]
-        [Route("update")]
-        public async Task<IActionResult> Put(UserModel model)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Put(string id, [FromBody]UserModel model)
         {
             try
             {
