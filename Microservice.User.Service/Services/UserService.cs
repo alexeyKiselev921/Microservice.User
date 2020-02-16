@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using Microservice.User.Service.DBContexts;
 using Microservice.User.Service.Models;
 using Microservice.User.Service.Repositories;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -59,6 +62,14 @@ namespace Microservice.User.Service.Services
         public async Task<DeleteResult> RemoveAll()
         {
             return await _repository.Users.DeleteManyAsync(new BsonDocument());
+        }
+
+        public async Task<UserModel> Login(string username, string password)
+        {
+            var userNameFilter = Builders<UserModel>.Filter.Eq("Username", username);
+            var passwordFilter = Builders<UserModel>.Filter.Eq("Password", password);
+            var filter = passwordFilter & userNameFilter;
+            return await _repository.Users.Find(filter).FirstOrDefaultAsync();
         }
     }
 }

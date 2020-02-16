@@ -50,6 +50,26 @@ namespace Microservice.User.Service.Controllers
         }
 
         [HttpPost]
+        public async Task<IActionResult> Login(object model)
+        {
+            try
+            {
+                var user = (UserModel) model;
+                if (user == null)
+                {
+                    return BadRequest("No user found");
+                }
+
+                await _userService.Login(user.Username, user.Password);
+                return Ok("Login successfully");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.ToString());
+            }
+        }
+
+        [HttpPost]
         public async Task<IActionResult> Post(UserModel model)
         {
             try

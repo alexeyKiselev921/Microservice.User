@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microservice.User.Service.Models;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 
 namespace Microservice.User.Service.Services
@@ -13,5 +14,6 @@ namespace Microservice.User.Service.Services
         Task<bool> Update(UserModel user);
         Task<DeleteResult> Remove(string userId);
         Task<DeleteResult> RemoveAll();
+        Task<UserModel> Login(string username, string password);
     }
 }
