@@ -33,6 +33,7 @@ namespace Microservice.User.Service
             {
                 options.ConnectionString = Configuration.GetSection("MongoConnection:ConnectionString").Value;
                 options.DatabaseName = Configuration.GetSection("MongoConnection:DatabaseName").Value;
+                options.CollectionName = Configuration.GetSection("MongoCollection:CollectionName").Value;
             });
 
             services.AddTransient<IUserService, UserService>();

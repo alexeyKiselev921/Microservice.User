@@ -13,7 +13,7 @@ namespace Microservice.User.Service.Repositories
     {
         private readonly IMongoDatabase _mongoDatabase;
 
-        public IMongoCollection<UserModel> Users => _mongoDatabase.GetCollection<UserModel>("Users");
+        public IMongoCollection<UserModel> Users { get; set; }
 
         public MongoRepository(IOptions<UserDbContext> settings)
         {
@@ -21,6 +21,7 @@ namespace Microservice.User.Service.Repositories
             {
                 var client = new MongoClient(settings.Value.ConnectionString);
                 _mongoDatabase = client.GetDatabase(settings.Value.DatabaseName);
+                Users = _mongoDatabase.GetCollection<UserModel>(settings.Value.CollectionName);
             }
             catch (Exception e)
             {
