@@ -28,7 +28,6 @@ namespace Microservice.User.Service.Controllers
         }
 
         [HttpGet("{id}", Name = "Get")]
-        [Route("getById")]
         public async Task<string> Get(string id)
         {
             try
@@ -93,7 +92,7 @@ namespace Microservice.User.Service.Controllers
             }
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             try
