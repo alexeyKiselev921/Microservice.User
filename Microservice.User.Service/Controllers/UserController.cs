@@ -142,5 +142,20 @@ namespace Microservice.User.Service.Controllers
                 return BadRequest(e.ToString());
             }
         }
+
+        [HttpGet]
+        [Route("getUser")]
+        public IActionResult GetUser(string username)
+        {
+            try
+            {
+                _userService.GetUser(username);
+                return Ok("User was found");
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.ToString());
+            }
+        }
     }
 }

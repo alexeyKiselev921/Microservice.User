@@ -15,5 +15,6 @@ namespace Microservice.User.Service.Services
         Task<DeleteResult> Remove(string userId);
         Task<DeleteResult> RemoveAll();
         Task<UserModel> Login(string username, string password);
+        Task<UserModel> GetUser(string username);
     }
 }

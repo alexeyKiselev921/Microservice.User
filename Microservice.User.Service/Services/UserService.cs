@@ -71,5 +71,11 @@ namespace Microservice.User.Service.Services
             var filter = passwordFilter & userNameFilter;
             return await _repository.Users.Find(filter).FirstOrDefaultAsync();
         }
+
+        public async Task<UserModel> GetUser(string username)
+        {
+            var userNameFilter = Builders<UserModel>.Filter.Eq("Username", username);
+            return await _repository.Users.Find(userNameFilter).FirstOrDefaultAsync();
+        }
     }
 }
